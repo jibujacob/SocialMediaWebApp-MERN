@@ -87,6 +87,7 @@ const Link = styled.span`
 const Icons = styled.div`
     display:flex;
     align-items:center;
+
 `
 
 const IconItem = styled.div`

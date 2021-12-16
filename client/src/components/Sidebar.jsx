@@ -32,6 +32,12 @@ const Container = styled.div`
     &::-webkit-scrollbar-thumb{
         background-color:rgb(179,179,179);
     }
+
+    @media only screen and (max-width:872px){
+        display:none;
+    }
+
+    
    
 `
 

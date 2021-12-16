@@ -5,6 +5,9 @@ import OnlineFriends from './OnlineFriends'
 
 const Container = styled.div`
     flex:3.5;
+    @media only screen and (max-width:645px){
+        display:none;
+    }
 `
 
 const Wrapper = styled.div`

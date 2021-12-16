@@ -7,10 +7,18 @@ import {Posts} from "../dummyData"
 
 const Container = styled.div`
     flex:5.5;
+
+    @media only screen and (max-width:480px){
+        width:100%;
+    }
 `
 
 const Wrapper = styled.div`
     padding:20px;
+
+    @media only screen and (max-width:480px){
+        padding:5px;
+    }
 `
 
 const Feed = () => {

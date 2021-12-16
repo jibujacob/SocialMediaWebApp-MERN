@@ -55,6 +55,10 @@ const Bottom = styled.div`
 const Options = styled.div`
     display:flex;
     margin-left:20px;
+
+    @media only screen and (max-width:480px){
+        flex-wrap:wrap;
+    }
 `
 const Option = styled.div`
     display:flex;

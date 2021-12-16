@@ -9,6 +9,10 @@ import Sidebar from "../components/Sidebar";
 const BodyContainer = styled.div`
     display:flex;
     width:100%;
+
+    @media only screen and (max-width:480px){
+        overflow:hidden;
+    }
 `
 
 const Home = () => {
