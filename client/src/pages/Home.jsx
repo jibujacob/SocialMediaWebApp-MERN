@@ -1,16 +1,26 @@
 import React from 'react'
 import styled from "styled-components"
+
 import Topbar from '../components/Topbar'
+import Feed from "../components/Feed";
+import Rightbar from "../components/Rightbar";
+import Sidebar from "../components/Sidebar";
 
-const Container = styled.div`
-
+const BodyContainer = styled.div`
+    display:flex;
+    width:100%;
 `
 
 const Home = () => {
     return (
-        <Container>
+        <>
             <Topbar/>
-        </Container>
+            <BodyContainer>
+                <Sidebar/>
+                <Feed/>
+                <Rightbar/>
+            </BodyContainer>
+        </>
     )
 }
 
