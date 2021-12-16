@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -56,9 +56,7 @@ const Center = styled.div`
     margin:20px 0;
 `
 
-const PostText = styled.span`
-
-`
+const PostText = styled.span``
 
 const PostImage = styled.img`
     margin-top:20px;
@@ -91,9 +89,7 @@ const PostLikeCounter = styled.span`
     font-size:15px;
 `
 
-const PostCommentsWrapper = styled.div`
-
-`
+const PostCommentsWrapper = styled.div``
 
 const PostCommentText = styled.span`
     font-size:15px;
@@ -104,6 +100,13 @@ const PostCommentText = styled.span`
 const Post = ({post}) => {
 
     const user = Users.find(user => user.id === post.userId)
+    const [like,setLike] = useState(post.like)
+    const [isLiked,setIsLiked] = useState(false)
+
+    const handleClick = () => {
+        setLike(isLiked ? like-1 : like+1)
+        setIsLiked(!isLiked)
+    }
 
     return (
         <Container>
@@ -124,9 +127,9 @@ const Post = ({post}) => {
                 </Center>
                 <Bottom>
                     <PostIconsWrapper>
-                        <PostLikeIcon src="/assets/like.png" />
-                        <PostHeartIcon src="/assets/heart.png" />
-                        <PostLikeCounter>{post.like} people like it</PostLikeCounter>
+                        <PostLikeIcon onClick={handleClick} src="/assets/like.png" />
+                        <PostHeartIcon onClick={handleClick} src="/assets/heart.png" />
+                        <PostLikeCounter>{like} people like it</PostLikeCounter>
                     </PostIconsWrapper> 
                     <PostCommentsWrapper>
                         <PostCommentText>{post.comment} comments </PostCommentText>
