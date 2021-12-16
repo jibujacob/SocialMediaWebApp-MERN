@@ -10,12 +10,16 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import EventIcon from '@mui/icons-material/Event';
 import SchoolIcon from '@mui/icons-material/School';
+import CloseFriends from './CloseFriends';
+import { Users } from '../dummyData';
 
 
 const Container = styled.div`
     flex:3;
     height: calc(100vh - 50px);
     overflow-y:scroll;
+    position:sticky;
+    top:50px;
    
     &::-webkit-scrollbar{
         width:5px;
@@ -111,23 +115,7 @@ const FriendList = styled.ul`
     list-style:none;
 `
 
-const Friend = styled.li`
-    display:flex;
-    align-items:center;
-    margin-bottom:15px;
-`
 
-const FriendImage = styled.img`
-    width:32px;
-    height:32px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-right:10px;
-`
-
-const FriendName = styled.span`
-
-`
 
 const Sidebar = () => {
     return (
@@ -174,30 +162,9 @@ const Sidebar = () => {
                <Button>Show More</Button>
                <Hr/>
                <FriendList>
-                    <Friend>
-                        <FriendImage src="/assets/person/2.jpeg"/>
-                        <FriendName>Tom hiddleston</FriendName>
-                    </Friend>
-
-                    <Friend>
-                        <FriendImage src="/assets/person/2.jpeg"/>
-                        <FriendName>Tom hiddleston</FriendName>
-                    </Friend>
-
-                    <Friend>
-                        <FriendImage src="/assets/person/2.jpeg"/>
-                        <FriendName>Tom hiddleston</FriendName>
-                    </Friend>
-
-                    <Friend>
-                        <FriendImage src="/assets/person/2.jpeg"/>
-                        <FriendName>Tom hiddleston</FriendName>
-                    </Friend>
-
-                    <Friend>
-                        <FriendImage src="/assets/person/2.jpeg"/>
-                        <FriendName>Tom hiddleston</FriendName>
-                    </Friend>
+                    {Users.map(user => {
+                        return <CloseFriends key={user.id} user={user}/>
+                    })}    
                </FriendList>
            </Wrapper> 
         </Container>

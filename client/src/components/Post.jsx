@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
+import {Users} from "../dummyData"
+
 const Container = styled.div`
     display:flex;
     flex-direction:column;
@@ -99,32 +101,35 @@ const PostCommentText = styled.span`
     border-bottom:1px dashed gray;
 `
 
-const Post = () => {
+const Post = ({post}) => {
+
+    const user = Users.find(user => user.id === post.userId)
+
     return (
         <Container>
             <Wrapper>
                 <Top>
                     <PostOwnerDetails>
-                        <PostOwnerImage src="/assets/person/1.jpeg"/>
-                        <PostOwnerName>Natasha Romanoff</PostOwnerName>
-                        <PostDate>5 mins ago</PostDate>
+                        <PostOwnerImage src={user.profilePicture}/>
+                        <PostOwnerName>{user.username}</PostOwnerName>
+                        <PostDate>{post.date}</PostDate>
                     </PostOwnerDetails>
                     <Options>
                         <MoreVert/>
                     </Options>
                 </Top>
                 <Center>
-                    <PostText>Hey! It's my first post:)</PostText>
-                    <PostImage src="/assets/post/1.jpeg" />
+                    <PostText>{post?.desc}</PostText>
+                    <PostImage src={post.photo} />
                 </Center>
                 <Bottom>
                     <PostIconsWrapper>
                         <PostLikeIcon src="/assets/like.png" />
                         <PostHeartIcon src="/assets/heart.png" />
-                        <PostLikeCounter>32 people like it</PostLikeCounter>
+                        <PostLikeCounter>{post.like} people like it</PostLikeCounter>
                     </PostIconsWrapper> 
                     <PostCommentsWrapper>
-                        <PostCommentText>9 comments </PostCommentText>
+                        <PostCommentText>{post.comment} comments </PostCommentText>
                     </PostCommentsWrapper>
                 </Bottom>
             </Wrapper>
