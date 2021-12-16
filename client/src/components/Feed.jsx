@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from "styled-components"
+import Post from './Post'
 import Share from './Share'
 
 const Container = styled.div`
@@ -15,6 +16,12 @@ const Feed = () => {
         <Container>
             <Wrapper>
                 <Share/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
+                <Post/>
             </Wrapper>
         </Container>
     )

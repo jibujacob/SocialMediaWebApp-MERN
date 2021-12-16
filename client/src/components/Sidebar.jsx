@@ -44,12 +44,14 @@ const ListItem = styled.li`
     display:flex;
     align-items:center;
     margin-bottom:20px;
+    cursor:pointer;
 `
 
 // Below are the material UI components styling
 
 const IconStyle = css`
     margin-right:15px;
+    margin-left:10px;
 `
 const Feed = styled(RssFeedIcon)`
     ${IconStyle}
