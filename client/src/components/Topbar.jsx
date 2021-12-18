@@ -123,6 +123,10 @@ const ProfileImage = styled.img`
     border-radius:50%;
     object-fit:cover;
     cursor:pointer;
+    
+    @media only screen and (max-width:872px){
+        margin-right:20px;
+    }
 `
 
 const Topbar = () => {
